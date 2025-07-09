@@ -274,7 +274,8 @@ class SparkAdapter(SQLAdapter):
             database = None  # type: ignore
 
         if "." in schema:
-            database, schema = schema.split(".", 1)
+            # dbt-spark does not allow catalog.schema.table notation
+            _, schema = schema.split(".", 1)
 
         return super().get_relation(database, schema, identifier)
 
