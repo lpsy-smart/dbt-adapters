@@ -273,6 +273,9 @@ class SparkAdapter(SQLAdapter):
         if not self.Relation.get_default_include_policy().database:
             database = None  # type: ignore
 
+        if "." in schema:
+            database, schema = schema.split(".", 1)
+
         return super().get_relation(database, schema, identifier)
 
     def parse_describe_extended(
