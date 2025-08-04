@@ -1,3 +1,9 @@
+* This is a fork of the dbt-spark adapter with added compatibility for `<catalog>.<schema>.<table>` format. This allows creating tables across different catalogs with a single dbt run.
+* Works locally with the vscode databricks extension. Sign-in with `databricks auth login` and ensure that the `.databricks/.databricks.env` file is created by the extension.
+* Works with databricks job clusters by using the spark session.
+
+*****
+
 <p align="center">
     <img
         src="https://raw.githubusercontent.com/dbt-labs/dbt/ec7dee39f793aa4f7dd3dae37282cc87664813e4/etc/dbt-logo-full.svg"
